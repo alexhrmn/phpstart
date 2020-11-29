@@ -16,14 +16,15 @@ class Router
      if (!empty($_SERVER['REQUEST_URI'])) {
        return trim($_SERVER['REQUEST_URI'], '/');
      }
-}
+
+   }
     public function run()
    {
 //String of request
      $uri = $this->getURI();
 //Check routes.php
      foreach ($this ->routes as $uriPattern => $path) {
-//comprassion $uriPattern and $uri
+// comprassion $uriPattern and $uri
     if (preg_match("~$uriPattern~", $uri)) {
 
         echo '<br>Где ищем (запрос, который набрал пользователь):'.$uri;
@@ -34,7 +35,7 @@ class Router
         $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
         echo '<br><br> Нужно сформировать: '.$internalRoute;
-           //waht controlleror action chose request
+           //what controller action chose request
         $segments = explode('/', $internalRoute);
 
         $controllerName = array_shift($segments).'Controller';
@@ -45,8 +46,7 @@ class Router
         $parameters = $segments;
 
         // turn on file class-controller
-        $controllerFile = ROOT . '/controllers/' .
-                $controllerName . '.php';
+        $controllerFile = ROOT . '/controllers/' .  $controllerName . '.php';
 
         if (file_exists($controllerFile)) {
           include_once($controllerFile);
@@ -54,7 +54,7 @@ class Router
         // Create object, run method or action
         $controllerObject = new $controllerName;
 
-        $result = call_user_func_array($controllerObject, $actionName, $parameters);
+        $result = call_user_func_array ($controllerObject, $actionName, $parameters);
 
         if ($result != null) {
           break;
