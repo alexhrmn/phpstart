@@ -8,7 +8,7 @@
  ini_set ('display_errors',1);
  error_reporting(E_ALL);
 
- // 2. Conecting system files
+ // 2. Connecting system files
  define ('ROOT', dirname (__FILE__));
  require_once (ROOT.'/components/Router.php');
 
