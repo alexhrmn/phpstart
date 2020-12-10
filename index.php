@@ -13,7 +13,7 @@
  require_once (ROOT.'/components/Router.php');
 
 
- // 3. Conect
+ // 3. Connect
 
 
  // 4. Router
