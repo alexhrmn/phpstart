@@ -16,14 +16,15 @@ class Router
      if (!empty($_SERVER['REQUEST_URI'])) {
        return trim($_SERVER['REQUEST_URI'], '/');
      }
-}
+
+   }
     public function run()
    {
 //String of request
      $uri = $this->getURI();
 //Check routes.php
      foreach ($this ->routes as $uriPattern => $path) {
-//comprassion $uriPattern and $uri
+// comprassion $uriPattern and $uri
     if (preg_match("~$uriPattern~", $uri)) {
 
         // получаем внутренний путь из внешнего согласно правилу
@@ -31,14 +32,14 @@ class Router
            //waht controlleror action chose request
         $segments = explode('/', $internalRoute);
 
-        $controllerName = array_shift($segments).'Controller';
+        $controllerName = array_shift($segments) . 'Controller';
         $controllerName = ucfirst($controllerName);
 
         $actionName = 'action'.ucfirst(array_shift($segments));
 
         $parameters = $segments;
 
-        // Подключить фацл класса-контроллера
+        // Подключить файл класса-контроллера
         $controllerFile = ROOT . '/controllers/' .
                 $controllerName . '.php';
 
