@@ -38,7 +38,7 @@ class Router
            //what controller action chose request
         $segments = explode('/', $internalRoute);
 
-        $controllerName = array_shift($segments).'Controller';
+        $controllerName = array_shift($segments) . 'Controller';
         $controllerName = ucfirst($controllerName);
 
         $actionName = 'action'.ucfirst(array_shift($segments));
