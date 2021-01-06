@@ -46,7 +46,7 @@ class Router
 
         die;
 
-        // Подключить файл класса-контроллера.
+        // Подключить файл класса-контроллера
         $controllerFile = ROOT . '/controllers/' .
                 $controllerName . '.php';
 
