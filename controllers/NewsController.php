@@ -10,10 +10,10 @@
       return true;
    }
 
-   public function actionView($params)
+   public function actionView($category, $id)
    {
-      echo '<br>'.$params[0];
-      echo '<br>'.$params[1];
+      echo '<br>'.$сategory;
+      echo '<br>'.$id;
 
       return true;
    }
