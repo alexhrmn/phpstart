@@ -38,7 +38,7 @@ class Router
            //what controller action chose request
         $segments = explode('/', $internalRoute);
 
-        $controllerName = array_shift($segments).'Controller';
+        $controllerName = array_shift($segments) . 'Controller';
         $controllerName = ucfirst($controllerName);
 
         $actionName = 'action'.ucfirst(array_shift($segments));
@@ -52,7 +52,7 @@ class Router
           include_once($controllerFile);
            }
         // Create object, run method or action
-        $controllerObject = new $controllerName;
+         $controllerObject = new $controllerName;
 
         $result = call_user_func_array ($controllerObject, $actionName, $parameters);
 
