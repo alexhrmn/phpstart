@@ -26,14 +26,8 @@ class Router
 //comprassion $uriPattern and $uri
     if (preg_match("~$uriPattern~", $uri)) {
 
-        echo '<br>Где ищем (запрос, который набрал пользователь):'.$uri;
-        echo '<br>Что ищем (Совпадение из правил):'.$uriPattern;
-        echo '<br>Кто обрабатывает: '.$path;
-
         // получаем внутренний путь из внешнего согласно правилу
         $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
-
-        echo '<br><br> Нужно сформировать: '.$internalRoute;
            //waht controlleror action chose request
         $segments = explode('/', $internalRoute);
 
@@ -44,17 +38,17 @@ class Router
 
         $parameters = $segments;
 
-        // turn on file class-controller
+        // Подключить фацл класса-контроллера
         $controllerFile = ROOT . '/controllers/' .
                 $controllerName . '.php';
 
         if (file_exists($controllerFile)) {
           include_once($controllerFile);
            }
-        // Create object, run method or action
+      // Создать объект,вызвать метод (т.е. action)
         $controllerObject = new $controllerName;
 
-        $result = call_user_func_array($controllerObject, $actionName, $parameters);
+        $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
 
         if ($result != null) {
           break;
