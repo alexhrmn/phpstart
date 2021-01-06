@@ -52,7 +52,7 @@ class Router
           include_once($controllerFile);
            }
         // Create object, run method or action
-        $controllerObject = new $controllerName;
+         $controllerObject = new $controllerName;
 
         $result = call_user_func_array ($controllerObject, $actionName, $parameters);
 
