@@ -27,12 +27,16 @@ class Router
 // comprassion $uriPattern and $uri
     if (preg_match("~$uriPattern~", $uri)) {
 
+
         // получаем внутренний путь из внешнего согласно правилу
         $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
         // Убрал phpstart с URI
 
+
+        $uri = str_replace('phpstart/','',$uri);
         $internalRoute = str_replace('phpstart/','',$internalRoute);
+
 
         // Определить контроллер, action, параметры
 
@@ -45,12 +49,17 @@ class Router
          echo '<br>controller name: '.$controllerName;
          echo '<br>action name: '.$actionName;
         $parameters = $segments;
-        echo '<pre>';
-        print_r($parameters);
+           echo '<pre>';
+           print_r($parameters);
+           echo '<br>где.запрос пользователя $uri '.$uri;
 
-
-
-        die;
+           echo '<br>что?совпадение из правил $uriPattern '.$uriPattern;
+           echo '<br>кто обрабатывает $path '.$path;
+           echo '<br> $actionName '.$actionName;
+          // echo '<br>'.$segments;
+          // echo '<br>'.$parameters;
+          echo '<br>нужно сформировать $internalRoute '.$internalRoute;
+           die;
 
 
         // Подключить файл класса-контроллера
