@@ -12,8 +12,7 @@
 
    public function actionView ($category, $id)
    {
-      echo '<br>'.$category;
-      echo '<br>'.$id;
+      
 
 
 
