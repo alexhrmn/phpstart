@@ -46,25 +46,26 @@ class Router
         $controllerName = ucfirst($controllerName);
 
         $actionName = 'action' . ucfirst(array_shift($segments));
-         echo '<br>controller name: '.$controllerName;
-         echo '<br>action name: '.$actionName;
+         //echo '<br>controller name: '.$controllerName;
+         //echo '<br>action name: '.$actionName;
         $parameters = $segments;
-           echo '<pre>';
-           print_r($parameters);
-           echo '<br>где.запрос пользователя $uri '.$uri;
+          // echo '<pre>';
+           //print_r($parameters);
+           //echo '<br>где.запрос пользователя $uri '.$uri;
 
-           echo '<br>что?совпадение из правил $uriPattern '.$uriPattern;
-           echo '<br>кто обрабатывает $path '.$path;
-           echo '<br> $actionName '.$actionName;
+           //echo '<br>что?совпадение из правил $uriPattern '.$uriPattern;
+           //echo '<br>кто обрабатывает $path '.$path;
+           //echo '<br> $actionName '.$actionName;
           // echo '<br>'.$segments;
           // echo '<br>'.$parameters;
-          echo '<br>нужно сформировать $internalRoute '.$internalRoute;
-           die;
+          //echo '<br>нужно сформировать $internalRoute '.$internalRoute;
+           //die;
 
 
         // Подключить файл класса-контроллера
         $controllerFile = ROOT . '/controllers/' .
                 $controllerName . '.php';
+
 
         if (file_exists($controllerFile)) {
           include_once($controllerFile);
