@@ -4,7 +4,7 @@
 
     public function actionList ()
     {
-      echo 'ProductsController actionList';
+      echo 'ProductController actionList';
       return true;
     }
 
