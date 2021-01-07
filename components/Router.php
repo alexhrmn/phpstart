@@ -32,7 +32,7 @@ class Router
 
         // Убрал phpstart с URI
 
-        $internalRoute = str_replace('phpstart','',$path);
+        $internalRoute = str_replace('phpstart/','',$internalRoute);
 
         // Определить контроллер, action, параметры
 
