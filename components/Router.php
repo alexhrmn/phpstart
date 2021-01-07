@@ -29,17 +29,29 @@ class Router
 
         // получаем внутренний путь из внешнего согласно правилу
         $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+
+        // Убрал phpstart с URI
+
+        $internalRoute = str_replace('phpstart','',$path);
+
         // Определить контроллер, action, параметры
 
         $segments = explode('/', $internalRoute);
-
 
         $controllerName = array_shift($segments) . 'Controller';
         $controllerName = ucfirst($controllerName);
 
         $actionName = 'action' . ucfirst(array_shift($segments));
-
+         echo '<br>controller name: '.$controllerName;
+         echo '<br>action name: '.$actionName;
         $parameters = $segments;
+        echo '<pre>';
+        print_r($parameters);
+
+
+
+        die;
+
 
         // Подключить файл класса-контроллера
         $controllerFile = ROOT . '/controllers/' .
