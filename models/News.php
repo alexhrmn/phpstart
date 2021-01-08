@@ -20,6 +20,7 @@ class News
     public static function getNewsList() {
          // Запрос к БД
 
+
       $host = 'localhost';
       $dbname = 'mvc_site';
       $user = 'root';
