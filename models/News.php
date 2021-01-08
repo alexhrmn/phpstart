@@ -23,7 +23,7 @@ class News
       $host = 'localhost';
       $dbname = 'mvc_site';
       $user = 'root';
-      $password = '123456';
+      $password = 'password';
       $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
       $newsList = array();
