@@ -20,10 +20,10 @@ class News
     public static function getNewsList() {
          // Запрос к БД
 
-      $host = 'localhost:8888';
+      $host = 'localhost';
       $dbname = 'mvc_site';
       $user = 'root';
-      $password = '';
+      $password = '123456';
       $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
       $newsList = array();
@@ -34,7 +34,7 @@ class News
               . 'LIMIT 10 ');
 
       $i = 0;
-      while($row = $result->fetch()){
+      while($row = $result->fetch()) {
         $newsList[$i]['id'] = $row['id'];
         $newsList[$i]['title'] = $row['title'];
         $newsList[$i]['date'] = $row['date'];
