@@ -8,16 +8,40 @@ class News
     * @ param integer $id
     */
     public static function getNewsItemById($id)
-    {
-         // Запроск БД
+        {
+         //Запроск БД
+         
+         $id = intval ($id);
 
+         if ($id) {
+           $host = 'localhost';
+           $dbname = 'mvc_site';
+           $user = 'root';
+           $password = 'password';
+           $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password,);
+
+           $result = $db->query('SELECT * from news WHERE id=' . $id);
+
+
+
+
+           $newsItem = $result->fetch();
+
+           return $newsItem;
+
+
+         }
+//
     }
 
 
     /**
     * Return an array of news item
     */
-    public static function getNewsList() {
+    public static function getNewsList()
+
+    {
+
          // Запрос к БД
 
 
@@ -35,7 +59,10 @@ class News
               . 'LIMIT 10 ');
 
       $i = 0;
-      while($row = $result->fetch()) {
+
+        while($row = $result->fetch())
+
+      {
         $newsList[$i]['id'] = $row['id'];
         $newsList[$i]['title'] = $row['title'];
         $newsList[$i]['date'] = $row['date'];
