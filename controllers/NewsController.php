@@ -1,6 +1,6 @@
 <?php
 
- include_once ROOT. 'models/News.php'
+ include_once ROOT. '/models/News.php';
 
  class NewsController
  {
@@ -30,10 +30,6 @@
          echo 'actionView';
 
       }
-
-
-
-
 
       return true;
    }
