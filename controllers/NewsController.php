@@ -27,7 +27,7 @@
          print_r($newsItem);
          echo '</pre>';
 
-         //echo 'actionView';
+         echo 'actionView';
 
       }
 

@@ -10,7 +10,7 @@ class News
     public static function getNewsItemById($id)
         {
          //Запроск БД
-         
+
          $id = intval ($id);
 
          if ($id) {
@@ -53,7 +53,7 @@ class News
 
       $newsList = array();
 
-      $result = $db->query('SELECT id, title, date, short_content '
+      $result = $db->query('SELECT id, title, date, short_content, type '
               . 'FROM news '
               . 'ORDER BY date DESC '
               . 'LIMIT 10 ');
@@ -67,6 +67,8 @@ class News
         $newsList[$i]['title'] = $row['title'];
         $newsList[$i]['date'] = $row['date'];
         $newsList[$i]['short_content'] = $row['short_content'];
+        $newsList[$i]['type'] = $row['type'];
+
         $i++;
       }
       return $newsList;
