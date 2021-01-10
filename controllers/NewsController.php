@@ -11,7 +11,7 @@
       $newsList = array();
       $newsList = News::getNewsList();
 
-      require_once(ROOT.'/views/news/index.html');
+      require_once(ROOT.'/views/news/index.php');
 
       // echo '<pre>';
       // print_r($newsList);
