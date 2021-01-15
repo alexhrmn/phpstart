@@ -4,7 +4,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title> PHP START</title>
+<title> PHP NEWSPAPER</title>
 <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <link href="/phpstart/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
@@ -27,7 +27,7 @@
 	<div id="header-wrapper">
 		<div id="header">
 			<div id="logo">
-				<h1><a href="#">PHP START </a></h1>
+				<h1><a href="#">NEWSPAPER</a></h1>
 				</div>
 		</div>
 	</div>
@@ -36,18 +36,23 @@
 		<div id="page-bgtop">
 			<div id="page-bgbtm">
 				<div id="content">
+					<!-- BEGIN OF CYCLE-->
 					<?php foreach ($newsList as $newsItem):?>
 					<div class="post">
-						<h2 class="title"><a href='/news/<?php echo $newsItem['id'] ;?>'><?php echo $newsItem['title'].' # '.$newsItem['id'];?></a></h2>
-						<p class="meta">Posted by <a href='/news/<?php echo $newsItem['author_name'];?>' </a> on <?php echo $newsItem['date'];?>
+						<h2 class="title"><a href='/phpstart/news/<?php echo $newsItem['id'] ;?>'>
+							<?php echo $newsItem['title'].' # '.$newsItem['id'];?></a></h2>
+						<p class="meta">Posted by <?php echo $newsItem['author_name'];?>
+						</a> on <?php echo $newsItem['date'];?>
 							 &nbsp;&bull;&nbsp;
-						<a href='/news/<?php echo $newsItem['id'] ;?>' class="permalink"> Full article</a></p>
+						<a href='/phpstart/news/<?php echo $newsItem['id'] ;?>' class="permalink"> Full article</a></p>
 						<div class="entry">
-							<p><img src="/phpstart/template/images/pic01.jpg" width="800" height="300" alt="picture error" /></p>
+              <p><img src="/phpstart/template/<?php echo $newsItem['preview'] ;?>" width="800" height="300" alt="picture error"></p>
 							<p><?php echo $newsItem['short_content'];?></p>
+							<p class='links'><a href="/phpstart/news/<?php echo $newsItem['id'];?>" class='comments'>Read more</p>
 						</div>
 					</div>
 				<?php endforeach;?>
+				<!-- END OF CYCLE-->
 					<div style="clear: both;">&nbsp;</div>
 				</div>
 				<!-- end #content -->
@@ -100,7 +105,7 @@
 	<!-- end #page -->
 </div>
 <div id="footer">
-	<p>Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>. Photos by Fotogrph</a>.</p>
+	<p>Copyright (c) 2020 alexhirman.com. All rights reserved. Design by <a href="#">FCT</a>. Photos by Fotogrph</a>.</p>
 </div>
 <!-- end #footer -->
 </body>
