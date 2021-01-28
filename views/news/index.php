@@ -46,7 +46,7 @@
 							 &nbsp;&bull;&nbsp;
 						<a href='/phpstart/news/<?php echo $newsItem['id'] ;?>' class="permalink"> Full article</a></p>
 						<div class="entry">
-              <p><img src="/phpstart/template/<?php echo $newsItem['preview'] ;?>" width="800" height="300" alt="picture error"></p>
+              <p><img src="/phpstart/template/<?php echo $newsItem['preview'] ;?>" width="800" height="600" alt="picture error"></p>
 							<p><?php echo $newsItem['short_content'];?></p>
 							<p class='links'><a href="/phpstart/news/<?php echo $newsItem['id'];?>" class='comments'>Read more</p>
 						</div>
